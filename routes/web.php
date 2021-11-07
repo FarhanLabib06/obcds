@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;              
+use App\Http\Controllers\AdminController; 
+use App\Http\Controllers\StockController;               
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.master');
-});
-Route::get('/admin',[AdminController::class,'test']);
+// Route::get('/', function () {
+//     return view('admin.master');
+// });
+Route::get('/',[AdminController::class,'test']);
+Route::get('/stock',[StockController::class,'stock'])->name('stock');

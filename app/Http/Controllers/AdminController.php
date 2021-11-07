@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function test(){
-        return view('admin.master');
+        return view('admin.layout.home');
     }
 }
