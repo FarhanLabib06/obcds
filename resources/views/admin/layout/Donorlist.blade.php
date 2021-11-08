@@ -1,21 +1,23 @@
 @extends('admin.master')
 @section('content')
 
+
  <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Stock list
+                               Donor list
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Stock_id</th>
-                                            <th>Blood_group</th>
-                                            <th>Collection_date</th>
-                                            <th>Expire_date</th>
-                                            <th>availability</th>
-                                            <th>In_stock</th>
+                                            <th>D_id</th>
+                                            <th>D_name</th>
+                                            <th>D_gender</th>
+                                            <th>D_blood_group</th>
+                                            <th>D_address</th>
+                                            <th>D_mobile</th>
+                                            <th>D_email</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -489,6 +491,11 @@
                                 </table>
                             </div>
                         </div>
+
+
+
+
+
 
 
 @endsection

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController; 
-use App\Http\Controllers\StockController;               
+use App\Http\Controllers\Backend\AdminController; 
+use App\Http\Controllers\Backend\StockController;               
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,4 @@ use App\Http\Controllers\StockController;
 // });
 Route::get('/',[AdminController::class,'test']);
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
+Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
