@@ -12,4 +12,8 @@ class AdminController extends Controller
     public function donorlist(){
         return view('admin.layout.Donorlist');
     }
+    public function recipentlist()
+    {
+        return view('admin.layout.Recipentlist');
+    }
 }
