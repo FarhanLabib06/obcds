@@ -19,7 +19,7 @@ use App\Http\Controllers\Backend\FeedbackController;
 // Route::get('/', function () {
 //     return view('admin.master');
 // });
-Route::get('/',[AdminController::class,'test']);
+Route::get('/',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
 Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
