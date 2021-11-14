@@ -2,6 +2,7 @@
 @section('content')
 
  <div class="card mb-4">
+     <a class="btn btn-primary" href="{{route('addstock')}}" role="button">Add New Stock</a>
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Stock list
@@ -16,6 +17,7 @@
                                             <th>Expire_date</th>
                                             <th>availability</th>
                                             <th>In_stock</th>
+                                            <th>Donor_name</th>
                                         </tr>
                                     </thead>
                                     <tfoot>

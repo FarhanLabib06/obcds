@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController; 
 use App\Http\Controllers\Backend\StockController; 
 use App\Http\Controllers\Backend\BloodrequestController;     
-use App\Http\Controllers\Backend\FeedbackController;         
+use App\Http\Controllers\Backend\FeedbackController;  
+use App\Http\Controllers\Backend\AddstockController;       
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,4 @@ Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist'
 Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
 Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
+Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
