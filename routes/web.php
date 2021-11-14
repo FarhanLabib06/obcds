@@ -27,3 +27,4 @@ Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->nam
 Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
+Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
