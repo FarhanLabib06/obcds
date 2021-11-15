@@ -15,12 +15,12 @@ class AddstockController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request->all());
+        //edd($request->all());
         add_new_stock::create([
             'Stock_id'=>$request->id,
             'Blood_group'=>$request->group,
             'Collection_date'=>$request->Collectiondate,
-            'Expire_date'=>$request->Collectiondate,
+            'Expire_date'=>$request->Expiredate,
             'availability'=>$request->availability,
             'In_stock'=>$request->instock,
             'Donor_name'=>$request->name,
