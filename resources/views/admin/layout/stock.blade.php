@@ -12,27 +12,29 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Stock_id</th>
+                                            <th>serial no</th>
+                                            <th>stock_number</th>
                                             <th>Blood_group</th>
                                             <th>Collection_date</th>
                                             <th>Expire_date</th>
                                             <th>availability</th>
                                             <th>In_stock</th>
-                                            <th>Donor_name</th>
+                                            <th>D_id</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                        @foreach($stock as $b)
+                                        @foreach($stock as $key=>$b)
 
                                         <tr>
-                                            <td>{{($b->id)}}</td>
+                                            <td>{{($b->$key+1)}}</td>
+                                            <td>{{($b->stock_number)}}</td>
                                             <td>{{($b->blood_group)}}</td>
                                             <td>{{($b->collection_date)}}</td>
                                             <td>{{($b->expire_date)}}</td>
                                             <td>{{($b->availability)}}</td>
                                             <td>{{($b->in_stock)}}</td>
-                                            <td>{{($b->donor_name)}}</td>
+                                            <td>{{($b->donor_id)}}</td>
                                         </tr>
                                        @endforeach
                                     </tbody>

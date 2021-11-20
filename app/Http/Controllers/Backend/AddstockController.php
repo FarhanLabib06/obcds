@@ -17,13 +17,13 @@ class AddstockController extends Controller
 
         //edd($request->all());
         add_new_stock::create([
-            'Stock_id'=>$request->id,
+            'Stock_number'=>$request->id,
             'Blood_group'=>$request->group,
             'Collection_date'=>$request->Collectiondate,
             'Expire_date'=>$request->Expiredate,
             'availability'=>$request->availability,
             'In_stock'=>$request->instock,
-            'Donor_name'=>$request->name,
+            'Donor_id'=>$request->id,
         ]);
         return redirect()->back();
     }
