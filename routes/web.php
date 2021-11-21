@@ -20,11 +20,14 @@ use App\Http\Controllers\Backend\AddstockController;
 // Route::get('/', function () {
 //     return view('admin.master');
 // });
-Route::get('/',[AdminController::class,'test'])->name('test');
+//Route::get('/',[AdminController::class,'test'])->name('test');
+Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
 Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
 Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
+//feedback route
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
+//add stock route
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
 Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');

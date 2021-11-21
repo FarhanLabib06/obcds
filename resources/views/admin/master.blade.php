@@ -15,7 +15,8 @@
         @include('admin.partials.nav')
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main style="margin-left: 20px; margin-right: 10px;" >
+                    
                    @yield('content')
                 </main>
                 @include('admin.partials.footer')
