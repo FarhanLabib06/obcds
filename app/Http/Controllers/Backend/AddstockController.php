@@ -16,6 +16,16 @@ class AddstockController extends Controller
     {
 
         //edd($request->all());
+        $request->validate([
+            'id'=>'required',
+            'group'=>'required',
+            'Collectiondate'=>'required',
+            'Expiredate'=>'required',
+            'availability'=>'required',
+            'instock'=>'required',
+            'id'=>'required',
+        ]);
+        
         add_new_stock::create([
             'Stock_number'=>$request->id,
             'Blood_group'=>$request->group,
