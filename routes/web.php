@@ -5,7 +5,8 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\StockController; 
 use App\Http\Controllers\Backend\BloodrequestController;     
 use App\Http\Controllers\Backend\FeedbackController;  
-use App\Http\Controllers\Backend\AddstockController;       
+use App\Http\Controllers\Backend\AddstockController;   
+use App\Http\Controllers\Website\HomeController;   
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ use App\Http\Controllers\Backend\AddstockController;
 // Route::get('/', function () {
 //     return view('admin.master');
 // });
-//Route::get('/',[AdminController::class,'test'])->name('test');
+Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
