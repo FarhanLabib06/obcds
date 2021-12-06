@@ -24,12 +24,12 @@
                 </div>
                 <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link selected" style="border-right: 1px solid gray;" href="#">EN &nbsp;</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="padding-left: 15px;" href="#">AR</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -44,25 +44,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link selected" href="index.html">Home</a>
+                        <a class="nav-link selected" href="{{route('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About-us.html">About Us</a>
+                        <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Articles</a>
+                        <a class="nav-link" href="#">Post</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="requests.html">Donations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="who-we-are.html">Who We Are ?</a>
+                        <a class="nav-link" href="{{route('whoweare')}}">Who We Are ?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                        <a class="nav-link" href="{{route('contactus')}}">Contact Us</a>
                     </li>
                 </ul>
-                <button class="btn signup" onclick= "window.location.href = 'signup.html';">New Account</button>
+                <a class="btn signup" href ="{{route('register')}}" >Register</a>
                 <!-- <button class="btn login" onclick= "window.location.href = 'login.html';">Login</button>  -->
                 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

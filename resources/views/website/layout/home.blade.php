@@ -1,9 +1,22 @@
 @extends('website.master')
 @section('content')
 <!-- Articles Start -->
+ <section id="header">
+        <div class="container">
+            <!-- <h1>We are seeking for a better community health.</h1>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora repellat inventore nemo repudiandae
+                ipsum quos.</h4>
+            <button class="btn more" onclick= "window.location.href = 'About-us.html';">More</button> -->
+        </div>
+    </section>
+ <section id="sub-header">
+        <div class="container">
+            <h3>A SINGLE PINT CAN SAVE THREE LIVES, A SINGLE GESTURE CAN CREATE A MILLION SMILES.</h3>
+        </div>
+    </section>
     <section id="articles">
         <div class="container">
-            <h2 style="display: inline-block;">Articles</h2>
+            <h2 style="display: inline-block;">Post</h2>
             <div class="swiper-container">
             <div class="button-area" style="display: inline-block; margin-left: 850px;">
                     <div class="swiper-button-next"></div>

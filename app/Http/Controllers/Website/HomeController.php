@@ -11,4 +11,12 @@ class HomeController extends Controller
     {
         return view('website.layout.home');  
     }
+    public function aboutus()
+    {
+        return view('website.layout.aboutus');
+    }
+    public function whoweare()
+    {
+        return view('website.layout.whoarewe');
+    }
 }

@@ -19,7 +19,7 @@
                             <li>About Us</li>
                         </a>
                         <a href="#articles">
-                            <li>Articles</li>
+                            <li>Posts</li>
                         </a>
                         <a href="requests.html">
                             <li>Donations</li>
@@ -32,7 +32,7 @@
                         </a>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <ul class="options">
                         <li>
                             <h5>Available On</h5>
@@ -40,7 +40,7 @@
                         <li><img src="{{url('website/imgs/ios1.png')}}" alt=""></li>
                         <li><img src="{{url('website/imgs/google1.png')}}" alt=""></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
