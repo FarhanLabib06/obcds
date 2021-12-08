@@ -12,10 +12,10 @@
                 </div>
                 <div class="col-md-3">
                     <ul class="menu">
-                        <a href="index.html">
+                        <a href="{{route('home')}}">
                             <li>Home</li>
                         </a>
-                        <a href="About-us.html">
+                        <a href="{{route('aboutus')}}">
                             <li>About Us</li>
                         </a>
                         <a href="#articles">
@@ -24,11 +24,11 @@
                         <a href="requests.html">
                             <li>Donations</li>
                         </a>
-                        <a href="who-we-are.html">
+                        <a href="{{route('whoweare')}}">
                             <li>Who We Are?</li>
                         </a>
-                        <a href="contact-us.html">
-                            <li>Contact Us</li>
+                        <a href="{{route('contactus')}}">
+                            <li>Feedback</li>
                         </a>
                     </ul>
                 </div>

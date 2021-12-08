@@ -5,7 +5,7 @@
                 <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <i class="fas fa-phone-volume" style="border-right: 1px solid gray;"> +20 127 245 6884
+                            <i class="fas fa-phone-volume" style="border-right: 1px solid gray;"> 
                                 &nbsp; &nbsp; </i>
                         </li>
                         <li class="nav-item">
@@ -59,7 +59,7 @@
                         <a class="nav-link" href="{{route('whoweare')}}">Who We Are ?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('contactus')}}">Contact Us</a>
+                        <a class="nav-link" href="{{route('contactus')}}">Feedback</a>
                     </li>
                 </ul>
                 <a class="btn signup" href ="{{route('register')}}" >Register</a>
