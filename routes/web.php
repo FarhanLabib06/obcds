@@ -8,7 +8,10 @@ use App\Http\Controllers\Backend\FeedbackController;
 use App\Http\Controllers\Backend\AddstockController;   
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\RegisterController;
-use App\Http\Controllers\Website\ContactusController;   
+use App\Http\Controllers\Website\ContactusController;
+use App\Http\Controllers\Website\DonorloginController;
+use App\Http\Controllers\Website\RecipentloginController;
+use App\Http\Controllers\Website\AdminloginController;   
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +32,15 @@ Route::get('/register',[RegisterController::class,'register'])->name('register')
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/whoarewe',[HomeController::class,'whoweare'])->name('whoweare');
 Route::get('/contactus',[ContactusController::class,'contact'])->name('contactus');
+Route::get('/donorlogin',[DonorloginController::class,'donorlogin'])->name('donorlogin');
+Route::post('/user/dologin',[DonorloginController::class,'doLogin'])->name('user.do.login');
+Route::get('/recipentlogin',[RecipentloginController::class,'recipentlogin'])->name('recipentlogin');
+Route::get('/adminlogin',[AdminloginController::class,'adminlogin'])->name('adminlogin');
+Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
 
 
 
-
+//Admin panel
 Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');

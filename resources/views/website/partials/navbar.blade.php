@@ -69,9 +69,9 @@
     Login
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="login.html">Donor login</a>
-    <a class="dropdown-item" href="#">Recipent login</a>
-    <a class="dropdown-item" href="#">Admin login</a>
+    <a class="dropdown-item" href="{{route('donorlogin')}}">Donor login</a>
+    <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a>
+    <a class="dropdown-item" href="{{route('adminlogin')}}">Admin login</a>
   </div>
 </div>
 
