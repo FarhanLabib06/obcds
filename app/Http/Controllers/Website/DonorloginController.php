@@ -14,14 +14,22 @@ class DonorloginController extends Controller
     }
     public function doLogin(Request $request){
         //dd($request->all());
-        $userpost=$request->except('_token');
-            // dd($userpost);
-            dd(Auth::attempt($userpost));
+        $userpost=[
+            'email'=>$request->email,
+            'password'=>$request->password,
+        ];
+         //dd($userpost);
+           //dd(Auth::attempt($userpost));
         if (Auth::attempt($userpost)) {
-            // dd("true");
+            //dd("true");
             return redirect()->route('home');
         }
         else
         return redirect()->route('donorlogin');
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

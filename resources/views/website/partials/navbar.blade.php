@@ -62,12 +62,17 @@
                         <a class="nav-link" href="{{route('contactus')}}">Feedback</a>
                     </li>
                 </ul>
+                @if(auth()->user())
+                <a class="btn signup" href ="{{route('user.logout')}}" >Logout</a>
+                @else
                 <a class="btn signup" href ="{{route('register')}}" >Register</a>
+
                 <!-- <button class="btn login" onclick= "window.location.href = 'login.html';">Login</button>  -->
                 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Login
   </button>
+  @endif
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="{{route('donorlogin')}}">Donor login</a>
     <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a>

@@ -9,9 +9,7 @@ class AdminController extends Controller
     public function test(){
         return view('admin.layout.home');
     }
-    public function donorlist(){
-        return view('admin.layout.Donorlist');
-    }
+    
     public function recipentlist()
     {
         return view('admin.layout.Recipentlist');

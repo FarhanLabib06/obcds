@@ -25,11 +25,7 @@
                         <option value="AB+">AB+</option>
                     </select>
 
-                    <!-- <select name="type" id="type" required="">
-                        <option value="user" disabled>User type</option>
-                        <option value="A">Donor</option>
-                        <option value="B">Recipent</option>
-                    </select> -->
+                    
 
                     <select name="Gov" id="Gov" required="">
                         <option value="Address" disabled>Address</option>

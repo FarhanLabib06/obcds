@@ -11,7 +11,8 @@ use App\Http\Controllers\Website\RegisterController;
 use App\Http\Controllers\Website\ContactusController;
 use App\Http\Controllers\Website\DonorloginController;
 use App\Http\Controllers\Website\RecipentloginController;
-use App\Http\Controllers\Website\AdminloginController;   
+use App\Http\Controllers\Website\AdminloginController;
+use App\Http\Controllers\Backend\UserController;   
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,8 @@ Route::post('/user/dologin',[DonorloginController::class,'doLogin'])->name('user
 Route::get('/recipentlogin',[RecipentloginController::class,'recipentlogin'])->name('recipentlogin');
 Route::get('/adminlogin',[AdminloginController::class,'adminlogin'])->name('adminlogin');
 Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
+Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
+Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
 
 
 
