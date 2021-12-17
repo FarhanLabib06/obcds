@@ -13,13 +13,13 @@
                                     <thead>
                                         <tr>
                                             <th>serial no</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>Email</th>
+                                            <th>Stock number</th>
                                             <th>Blood group</th>
-                                            <th>Address</th>
-                                            <th>Phone</th>
-                                            <th>D_id</th>
+                                            <th>Collection date</th>
+                                            <th>Expire date</th>
+                                            <th>Availsbility</th>
+                                            <th>In stock</th>
+                                            <th>Donor id</th>
                                         </tr>
                                     </thead>
                                     

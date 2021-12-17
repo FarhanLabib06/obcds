@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 call">
-                    <div class="title">Head</div>
+                    <div class="title">Contact Information</div>
                     <img src="imgs/logo.png" alt="">
                     <hr>
                     <h4>Mobile: +20 127 245 6884</h3>
@@ -23,13 +23,15 @@
                                 </div>
                 </div>
                 <div class="col-md-6 info">
-                    <div class="title">Head</div>
-                    <form action="submit">
+                    <div class="title">FeedBack</div>
+                    <form action="{{route('feedback.submit')}}" method="post">
+                        @csrf
                         <input type="text" name="name" id="" placeholder="Name" required="">
-                        <input type="email" name="name" id="" placeholder="Email" required="">
-                        <input type="number" name="name" id="" placeholder="Phone" required="">
+                        
+                        <input type="email" name="email" id="" placeholder="Email" required="">
+                        <input type="number" name="phone" id="" placeholder="Phone" required="">
                         <input type="text" name="title" id="" placeholder="Title" required="">
-                        <textarea name="message" id="" cols="10" rows="5" placeholder="Message"></textarea>
+                        <input type="text" name="messege" id="" placeholder="Messege" required="">
                         <div class="reg-group">
                             <button type="submit">Send</button>
                         </div>

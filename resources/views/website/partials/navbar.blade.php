@@ -49,12 +49,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
                     </li>
+                    @if(auth()->user())
                     <li class="nav-item">
                         <a class="nav-link" href="#">Post</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="requests.html">Donations</a>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('whoweare')}}">Who We Are ?</a>
                     </li>
@@ -74,8 +76,8 @@
   </button>
   @endif
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{route('donorlogin')}}">Donor login</a>
-    <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a>
+    <a class="dropdown-item" href="{{route('donorlogin')}}">User login</a>
+    <!-- <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a> -->
     <a class="dropdown-item" href="{{route('adminlogin')}}">Admin login</a>
   </div>
 </div>

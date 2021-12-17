@@ -12,7 +12,7 @@ use App\Http\Controllers\Website\ContactusController;
 use App\Http\Controllers\Website\DonorloginController;
 use App\Http\Controllers\Website\RecipentloginController;
 use App\Http\Controllers\Website\AdminloginController;
-use App\Http\Controllers\Backend\UserController;   
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +40,7 @@ Route::get('/adminlogin',[AdminloginController::class,'adminlogin'])->name('admi
 Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
 Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
 Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
+Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
 
 
 

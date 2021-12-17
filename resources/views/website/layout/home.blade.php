@@ -107,7 +107,7 @@
     <!-- Articles End -->
 
     <!-- Requests Start -->
-    <section id="requests">
+    <!-- <section id="requests">
         <div class="title">
             <h2>Donations</h2>
             <hr class="line">
@@ -195,7 +195,7 @@
                 <button onclick= "window.location.href = 'requests.html';">More</button>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Requests End -->
 
     <!-- Call us Start -->
