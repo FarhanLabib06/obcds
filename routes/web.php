@@ -13,7 +13,7 @@ use App\Http\Controllers\Website\DonorloginController;
 use App\Http\Controllers\Website\RecipentloginController;
 use App\Http\Controllers\Website\AdminloginController;
 use App\Http\Controllers\Backend\UserController;
-
+use App\Http\Controllers\Website\BloodcategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,14 +42,15 @@ Route::post('/user/do/registration',[RegisterController::class,'doRegistration']
 Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
 Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
 Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
+Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
 
 
 
 
-
+//Admin panel
 Route::group([],function (){
     
-//Admin panel
+
 Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');

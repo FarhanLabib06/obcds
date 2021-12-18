@@ -13,7 +13,7 @@
 <!-- 
     <lable>Feedback info:</lable>
     <input type="text" class="form-control" value="{{$feedback->name}}">
-    <input type="file" class="form-control"> -->
+    <input type="file" class="form-control"> --> 
 
 
 

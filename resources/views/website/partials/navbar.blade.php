@@ -56,6 +56,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="requests.html">Donations</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('blood.category')}}">Blood category</a>
+                    </li>
                     @endif
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('whoweare')}}">Who We Are ?</a>

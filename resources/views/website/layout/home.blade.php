@@ -15,6 +15,7 @@
         </div>
     </section>
     <section id="articles">
+         @if(auth()->user())
         <div class="container">
             <h2 style="display: inline-block;">Post</h2>
             <div class="swiper-container">
@@ -87,6 +88,7 @@
                                 <img src="{{url('website/imgs/p5.jpg')}}" alt="Card image">
                                 <button class="like"><i class="fas fa-heart icon-large"></i></button>
                             </div>
+                            
                             <div class="card-body">
                                 <h4 class="card-title">How To Donate?</h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
@@ -103,6 +105,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </section>
     <!-- Articles End -->
 
