@@ -18,6 +18,7 @@
                                             <th>Phone</th>
                                             <th>Title</th>
                                             <th>Messege</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -30,6 +31,9 @@
                                             <td>{{($c->phone)}}</td>
                                             <td>{{($c->title)}}</td>
                                             <td>{{($c->messege)}}</td>
+                                            <td>
+                                                <a  class="btn btn-outline-primary" href="{{route('admin.feedbackview',$c->id)}}">view</a>
+                                            </td>
                                         </tr>
                                        @endforeach
                                     </tbody>

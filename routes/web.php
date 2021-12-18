@@ -12,6 +12,7 @@ use App\Http\Controllers\Website\ContactusController;
 use App\Http\Controllers\Website\DonorloginController;
 use App\Http\Controllers\Website\RecipentloginController;
 use App\Http\Controllers\Website\AdminloginController;
+use App\Http\Controllers\Backend\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,10 @@ Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->n
 
 
 
+
+
+Route::group([],function (){
+    
 //Admin panel
 Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
@@ -52,6 +57,10 @@ Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->nam
 Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
 //feedback route
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
+Route::get('/feedback/view/{id}',[FeedbackController::class,'feedbackview'])->name('admin.feedbackview');
 //add stock route
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
 Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
+
+   
+});
