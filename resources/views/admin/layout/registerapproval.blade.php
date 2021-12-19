@@ -19,7 +19,8 @@
                                             <th>Role</th>
                                             <th>Address</th>
                                             <th>Phone</th>
-                                            <th>Action</th>
+                                            <th>Approve</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     @foreach($userdata as $key=>$a)
@@ -33,15 +34,25 @@
                                             <td>{{($a->address)}}</td>
                                             <td>{{($a->phone)}}</td>
                                             <td>
-                                                <a  class="btn btn-outline-primary" href="{{route('user.delete',$a->id)}}">Remove</a>
+                                                <a  class="btn btn-outline-primary" href="">Approve</a>
                                             </td>
-                                            
+                                             <td>
+                                                <a  class="btn btn-outline-primary" href="">Delete</a>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
 
 
 

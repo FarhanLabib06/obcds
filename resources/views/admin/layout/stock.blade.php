@@ -17,9 +17,10 @@
                                             <th>Blood group</th>
                                             <th>Collection date</th>
                                             <th>Expire date</th>
-                                            <th>Availsbility</th>
+                                            <th>Availability</th>
                                             <th>In stock</th>
                                             <th>Donor id</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     
@@ -35,6 +36,9 @@
                                             <td>{{($b->availability)}}</td>
                                             <td>{{($b->in_stock)}}</td>
                                             <td>{{($b->donor_id)}}</td>
+                                            <td>
+                                                <a  class="btn btn-outline-primary" href="{{route('stock.delete',$b->id)}}">Delete</a>
+                                            </td>
                                         </tr>
                                        @endforeach
                                     </tbody>

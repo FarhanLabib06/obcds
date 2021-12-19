@@ -14,6 +14,7 @@ use App\Http\Controllers\Website\RecipentloginController;
 use App\Http\Controllers\Website\AdminloginController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Website\BloodcategoryController;
+use App\Http\Controllers\Backend\RegistrationapprovalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,12 +57,14 @@ Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
 Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
 Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
+Route::get('/User/delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
+Route::get('/user/registration/approve',[RegistrationapprovalController::class,'approve'])->name('registration.approve');
 //feedback route
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
 Route::get('/feedback/view/{id}',[FeedbackController::class,'feedbackview'])->name('admin.feedbackview');
 //add stock route
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
 Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
-
+Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
    
 });

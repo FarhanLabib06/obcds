@@ -12,4 +12,9 @@ class UserController extends Controller
         $userdata=User::all();
         return view('admin.layout.userlist',compact('userdata'));
     }
+    public function userdelete($id)
+    {
+       User::find($id)->delete();
+       return redirect()->back()->with('success','User Removed.');
+    }
 }

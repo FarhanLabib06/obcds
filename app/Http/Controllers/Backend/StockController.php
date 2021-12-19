@@ -14,4 +14,10 @@ class StockController extends Controller
 
         return view('admin.Layout.stock',compact('stock'));
     }
+     public function stockdelete($id)
+    {
+       // dd($id);
+       add_new_stock::find($id)->delete();
+       return redirect()->back()->with('success','Stock Deleted.');
+    }
 }
