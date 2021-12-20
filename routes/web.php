@@ -11,7 +11,7 @@ use App\Http\Controllers\Website\RegisterController;
 use App\Http\Controllers\Website\ContactusController;
 use App\Http\Controllers\Website\DonorloginController;
 use App\Http\Controllers\Website\RecipentloginController;
-use App\Http\Controllers\Website\AdminloginController;
+use App\Http\Controllers\Backend\AdminloginController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Website\BloodcategoryController;
 use App\Http\Controllers\Backend\RegistrationapprovalController;
@@ -38,7 +38,7 @@ Route::get('/contactus',[ContactusController::class,'contact'])->name('contactus
 Route::get('/donorlogin',[DonorloginController::class,'donorlogin'])->name('donorlogin');
 Route::post('/user/dologin',[DonorloginController::class,'doLogin'])->name('user.do.login');
 Route::get('/recipentlogin',[RecipentloginController::class,'recipentlogin'])->name('recipentlogin');
-Route::get('/adminlogin',[AdminloginController::class,'adminlogin'])->name('adminlogin');
+
 Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
 Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
 Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
@@ -49,9 +49,14 @@ Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->
 
 
 //Admin panel
-Route::group([],function (){
+Route::get('/adminlogin',[AdminloginController::class,'login'])->name('admin.login');
+Route::post('/admin/dologin',[AdminloginController::class,'dologin'])->name('admin.do.login');
+Route::group(['middleware'=>'auth'],function (){
+    Route::get('/', function () {
+        return view('admin.master');
+    });
     
-
+Route::get('/admin/logout',[AdminloginController::class,'logout'])->name('admin.logout');
 Route::get('/admin',[AdminController::class,'test'])->name('test');
 Route::get('/stock',[StockController::class,'stock'])->name('stock');
 Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
