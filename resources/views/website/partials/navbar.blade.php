@@ -81,7 +81,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="{{route('donorlogin')}}">User login</a>
     <!-- <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a> -->
-    <a class="dropdown-item" href="{{route('adminlogin')}}">Admin login</a>
+    <a class="dropdown-item" href="{{route('admin.login')}}">Admin login</a>
   </div>
 </div>
 

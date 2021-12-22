@@ -30,6 +30,7 @@ use App\Http\Controllers\Backend\RegistrationapprovalController;
 //     return view('admin.master');
 // });
 //website
+Route::group(['prefix'=>'user'],function (){
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/register',[RegisterController::class,'register'])->name('register');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
@@ -45,10 +46,13 @@ Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.
 Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
 Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
 
+});
 
 
 
 //Admin panel
+Route::group(['prefix'=>'admin'],function (){
+    
 Route::get('/adminlogin',[AdminloginController::class,'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminloginController::class,'dologin'])->name('admin.do.login');
 Route::group(['middleware'=>'auth'],function (){
@@ -73,3 +77,4 @@ Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
 Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
    
 });
+    });
