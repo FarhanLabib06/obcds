@@ -51,7 +51,7 @@
                     </li>
                     @if(auth()->user())
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Post</a>
+                        <a class="nav-link" href="{{route('post.page')}}">Post</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="requests.html">Donations</a>

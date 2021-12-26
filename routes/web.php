@@ -17,6 +17,7 @@ use App\Http\Controllers\Website\BloodcategoryController;
 use App\Http\Controllers\Backend\RegistrationapprovalController;
 use App\Http\Controllers\Backend\BloodcController;
 use App\Http\Controllers\Backend\NewcategoryController;
+use App\Http\Controllers\Website\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +48,9 @@ Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
 Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
 Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
 Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
+// post
+Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
+Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
 
 //});
 
