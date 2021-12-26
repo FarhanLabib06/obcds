@@ -15,6 +15,8 @@ use App\Http\Controllers\Backend\AdminloginController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Website\BloodcategoryController;
 use App\Http\Controllers\Backend\RegistrationapprovalController;
+use App\Http\Controllers\Backend\BloodcController;
+use App\Http\Controllers\Backend\NewcategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +32,7 @@ use App\Http\Controllers\Backend\RegistrationapprovalController;
 //     return view('admin.master');
 // });
 //website
-Route::group(['prefix'=>'user'],function (){
+//Route::group(['prefix'=>'user'],function (){
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/register',[RegisterController::class,'register'])->name('register');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
@@ -46,7 +48,7 @@ Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.
 Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
 Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
 
-});
+//});
 
 
 
@@ -71,10 +73,16 @@ Route::get('/user/registration/approve',[RegistrationapprovalController::class,'
 //feedback route
 Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
 Route::get('/feedback/view/{id}',[FeedbackController::class,'feedbackview'])->name('admin.feedbackview');
+Route::get('/feedback/delete/{id}',[FeedbackCOntroller::class,'feedbackdelete'])->name('feedback.delete');
 //add stock route
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
 Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
 Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
+//bloodcategory
+Route::get('/blood/category',[BloodcController::class,'bloodcat'])->name('blood.cat');
+Route::get('new/blood/category',[NewcategoryController::class,'newcategory'])->name('new.blood.cat');
+Route::post('blood/submit',[NewcategoryController::class,'newstore'])->name('create.new');
+Route::get('blood/cat/view',[BloodcController::class,'category'])->name('view.table');
    
 });
-    });
+});

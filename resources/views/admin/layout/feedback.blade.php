@@ -33,7 +33,9 @@
                                             <td>{{($c->messege)}}</td>
                                             <td>
                                                 <a  class="btn btn-outline-primary" href="{{route('admin.feedbackview',$c->id)}}">view</a>
+                                                <a  class="btn btn-outline-primary" href="{{route('feedback.delete',$c->id)}}">Delete</a>
                                             </td>
+                                            
                                         </tr>
                                        @endforeach
                                     </tbody>

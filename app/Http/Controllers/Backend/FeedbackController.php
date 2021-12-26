@@ -23,6 +23,11 @@ class FeedbackController extends Controller
 //      $product=Product::where('id',$product_id)->first();
         return view('admin.layout.feedbackview',compact('feedback'));
     }
+    public function feedbackdelete($id)
+    {
+       feedback::find($id)->delete();
+       return redirect()->back()->with('success','feedback Removed.');
+    }
 
      
 }

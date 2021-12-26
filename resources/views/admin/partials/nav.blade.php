@@ -81,7 +81,12 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Stock
                             </a>
+                            <a class="nav-link" href="{{route('view.table')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Blood category
+                            </a>
                         </div>
+                        
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
