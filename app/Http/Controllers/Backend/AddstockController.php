@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\add_new_stock;
+use App\Models\bloodtype;
 
 class AddstockController extends Controller
 {
     public function addstock()
     {
-        return view('admin.layout.addstock');
+        $categories = bloodtype::all();
+        return view('admin.layout.addstock',compact('categories'));
     }
     public function store(Request $request)
     {

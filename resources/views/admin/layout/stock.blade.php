@@ -20,7 +20,8 @@
                                             <th>Availability</th>
                                             <th>In stock</th>
                                             <th>Donor id</th>
-                                            <th>Action</th>
+                                            <th>Delete</th>
+                                            <th>Update</th>
                                         </tr>
                                     </thead>
                                     
@@ -38,6 +39,9 @@
                                             <td>{{($b->donor_id)}}</td>
                                             <td>
                                                 <a  class="btn btn-outline-primary" href="{{route('stock.delete',$b->id)}}">Delete</a>
+                                            </td>
+                                            <td>
+                                                <a  class="btn btn-outline-primary" href="{{route('stock.update.view',$b->id)}}">Update</a>
                                             </td>
                                         </tr>
                                        @endforeach

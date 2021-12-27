@@ -82,6 +82,8 @@ Route::get('/feedback/delete/{id}',[FeedbackCOntroller::class,'feedbackdelete'])
 Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
 Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
 Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
+Route::get('/stock/update/view/{id}',[StockController::class,'updateview'])->name('stock.update.view');
+Route::put('/stock/update/{id}',[StockController::class,'stockupdate'])->name('stock.update');
 //bloodcategory
 Route::get('/blood/category',[BloodcController::class,'bloodcat'])->name('blood.cat');
 Route::get('new/blood/category',[NewcategoryController::class,'newcategory'])->name('new.blood.cat');

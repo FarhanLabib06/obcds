@@ -1,34 +1,13 @@
 @extends('admin.master')
 @section('content')
-<h1>Add New Stock</h1> 
-@if($errors->any())
-<div class="alert alert-danger">
-  <ul>
-    @foreach ($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-<form action="{{route('store')}}" method="post">
+
+<form action="{{route('stock.update',$stock->id)}}" method="post">
+  @method('PUT')
   @csrf
-    <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Stock_number</label>
-    <input name="id" required type="digit" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select name="group" class="form-control" id="exampleFormControlSelect1">
-      @foreach($categories as $category)
-      <option value = "{{$category->id}}">{{$category->blood_group}}</option>
-      @endforeach
-    </select>
-  </div>
-  <!-- <div class="mb-3">
-    
+  <div>
     <label for="exampleInputEmail1" class="form-label">Blood_group</label>
     <input name="group" required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div> -->
+  </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Collection_date</label>
     <input name="Collectiondate" required type="date" class="form-control" id="exampleInputPassword1">
@@ -45,14 +24,12 @@
     <label for="exampleInputPassword1" class="form-label">In_stock</label>
     <input name="instock" reuired type="digit" class="form-control" id="exampleInputPassword1">
   </div>
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Donor_id</label>
     <input name="id" required type="text" class="form-control" id="exampleInputPassword1">
-  </div>
+  </div> -->
   
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-
 @endsection
