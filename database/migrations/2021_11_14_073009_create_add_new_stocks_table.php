@@ -21,7 +21,7 @@ class CreateAddNewStocksTable extends Migration
             $table->date('expire_date');
             $table->text('availability');
             $table->integer('in_stock');
-            $table->integer('donor_id');
+            
             $table->timestamps();
         });
     }

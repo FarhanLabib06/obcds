@@ -23,7 +23,7 @@ class DonorloginController extends Controller
            //dd(Auth::attempt($userpost));
         if (Auth::attempt($userpost)) {
             //dd("true");
-            return redirect()->route('home');
+            return redirect()->route('home')->with('sucess','login successfull.');
         }
         else
         return redirect()->route('donorlogin');

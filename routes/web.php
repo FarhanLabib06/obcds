@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\RegistrationapprovalController;
 use App\Http\Controllers\Backend\BloodcController;
 use App\Http\Controllers\Backend\NewcategoryController;
 use App\Http\Controllers\Website\PostController;
+use App\Http\Controllers\Website\UserprofileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,9 @@ Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->
 // post
 Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
 Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
+Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
+//profile
+Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
 
 //});
 
@@ -61,7 +65,7 @@ Route::group(['prefix'=>'admin'],function (){
     
 Route::get('/adminlogin',[AdminloginController::class,'login'])->name('admin.login');
 Route::post('/admin/dologin',[AdminloginController::class,'dologin'])->name('admin.do.login');
-Route::group(['middleware'=>'auth'],function (){
+Route::group(['middleware'=>['auth','admin']],function (){
     Route::get('/', function () {
         return view('admin.master');
     });

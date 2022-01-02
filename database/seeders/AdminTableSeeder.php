@@ -23,7 +23,8 @@ class AdminTableSeeder extends Seeder
             'address'=>'address',
             'phone'=>'01600000000',
             'password'=>bcrypt('12345'),
-            'active'=>'1'
+            'active'=>'1',
+            'role'=>'admin'
             
         ]);
     }

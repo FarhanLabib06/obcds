@@ -54,7 +54,7 @@
                         <a class="nav-link" href="{{route('post.page')}}">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="requests.html">Donations</a>
+                        <a class="nav-link" href="{{route('post.view')}}">View Posts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('blood.category')}}">Blood category</a>
@@ -69,6 +69,7 @@
                 </ul>
                 @if(auth()->user())
                 <a class="btn signup" href ="{{route('user.logout')}}" >Logout</a>
+                <a class="btn signup" href ="{{route('profile.view')}}" >Profile</a>
                 @else
                 <a class="btn signup" href ="{{route('register')}}" >Register</a>
 

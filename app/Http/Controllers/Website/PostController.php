@@ -20,4 +20,11 @@ class PostController extends Controller
         ]);
         return redirect()->back();
     }
+    public function viewpost()
+    {
+        $post=Post::all();
+        // dd($post);
+        return view('website.layout.viewpost',compact('post'));
+    }
+
 }

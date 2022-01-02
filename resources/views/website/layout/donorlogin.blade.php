@@ -1,6 +1,8 @@
 @extends('website.master')
 @section('content')
-
+@if(session()->has('msg'))
+<p class= "alert alert-success">{{session()->get('msg')}}></p>
+@endif
 <!-- Login Start -->
     <section id="login">
         <div class="container">
