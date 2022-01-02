@@ -24,7 +24,7 @@
                                 <h4 class="card-title">{{$p->title}}</h4>
                                 <p class="card-text">{{$p->messege}}</p>
                                 <div class="btn-cont">
-                                    <button class="card-btn" onclick= "window.location.href = 'article.html';">Details</button>
+                                    <a href ="{{route('comment.view')}}">Details</a>
                                 </div>
                             </div>
                         </div>

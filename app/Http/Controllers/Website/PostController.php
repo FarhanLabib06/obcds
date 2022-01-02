@@ -26,5 +26,9 @@ class PostController extends Controller
         // dd($post);
         return view('website.layout.viewpost',compact('post'));
     }
+    public function comment()
+    {
+        return view('website.layout.comment');
+    }
 
 }

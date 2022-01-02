@@ -53,6 +53,7 @@ Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->
 Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
 Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
 Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
+Route::get('/comment/view',[PostController::class,'comment'])->name('comment.view');
 //profile
 Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
 

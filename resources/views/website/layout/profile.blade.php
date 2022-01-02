@@ -37,31 +37,31 @@
 <div class="container bootstrap snippet">
     <div class="row" style="padding-bottom: 20px;">
         <div>
-            <a href="{% url 'index' %}" style="text-decoration: none; color: white;">
+            <!-- <a href="{% url 'index' %}" style="text-decoration: none; color: white;">
                 <button type="button" class="btn btn-success" style="position: absolute; font-weight: bold; right: 10%; background-color: #7fad39;">
                 Go Back to Home</button>
-            </a>
+            </a> -->
         </div>
     </div>
     <div class="row">
         <div class="col-sm-3"><!--left col-->
 
 
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <img src="#" class="avatar img-circle img-thumbnail"
                      alt="avatar">
                 <h4></h4>
-            </div>
+            </div> -->
 
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>Email: </h4><i class="fa fa-link fa-1x"></i></div>
+            <!-- <div class="panel panel-default">
+                <div class="panel-heading" ><h4>Email: </h4><i class="fa fa-link fa-1x"></i></div>
                 <div class="panel-body"><h5></h5></div>
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Activity: </h4><i class="fa fa-link fa-1x"></i></div>
                 <div class="panel-body"><a href="{% url 'order_history' %}" style="text-decoration: none;"><h5>View Orders</h5></a></div>
-            </div>
+            </div> -->
 
         </div><!--/col-3-->
         <div class="col-sm-9">
@@ -77,15 +77,15 @@
                         <!-- csrf -->
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <label for="first_name"><h4>First name</h4></label>
+                                <label for="first_name"><h4>name</h4></label>
                                 <input value="{{auth()->user()->name}} " type="text" class="form-control" name="first_name"
                                        id="first_name" placeholder="first name" title="enter your first name if any.">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <label for="last_name"><h4>Last name</h4></label>
-                                <input value="" type="text" class="form-control" name="last_name"
+                                <label for="email"><h4>email</h4></label>
+                                <input value="{{auth()->user()->email}}" type="text" class="form-control" name="last_name"
                                        id="last_name" placeholder="last name" title="enter your last name if any.">
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="phone"><h4>Phone</h4></label>
-                                <input value="" type="text" class="form-control" name="phone" id="phone"
+                                <input value="{{auth()->user()->phone}}" type="text" class="form-control" name="phone" id="phone"
                                        placeholder="enter phone" title="enter your phone number if any.">
                             </div>
                         </div>
@@ -101,40 +101,40 @@
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="inputAddress"><h4>Address</h4></label>
-                                <input value="" type="text" class="form-control" id="inputAddress"
+                                <input value="{{auth()->user()->address}}" type="text" class="form-control" id="inputAddress"
                                        name="inputAddress" placeholder="enter address" title="enter your address if any.">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6">
-                                <label for="inputCity"><h4>City</h4></label>
-                                <input value="" type="text" class="form-control" id="inputCity"
+                                <label for="inputCity"><h4>blood group</h4></label>
+                                <input value="{{auth()->user()->blood_type}}" type="text" class="form-control" id="inputCity"
                                        name ="inputCity" placeholder="enter city name" title="enter your city.">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="inputAddress2"><h4>State</h4></label>
                                 <input value="" type="text" class="form-control" id="inputAddress2"
                                        name="inputAddress2" placeholder="enter state name" title="enter your address if any.">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="divcol-md-2 col-xs-6">
                                 <label for="inputZip"><h4>Zip</h4></label>
                                 <input value="" type="text" class="form-control" name="inputZip" id="inputZip">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="exampleFormControlFile1"><h4>Upload Photo</h4></label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <div class="col-xs-12">
