@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link selected" href="{{route('home')}}">Home</a>
+                        <a class="nav-link " href="{{route('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
@@ -71,22 +71,25 @@
                 <a class="btn signup" href ="{{route('user.logout')}}" >Logout</a>
                 <a class="btn signup" href ="{{route('profile.view')}}" >Profile</a>
                 @else
-                <a class="btn signup" href ="{{route('register')}}" >Register</a>
-
-                <!-- <button class="btn login" onclick= "window.location.href = 'login.html';">Login</button>  -->
                 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Login
-  </button>
-  @endif
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{route('donorlogin')}}">User login</a>
-    <!-- <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a> -->
-    <a class="dropdown-item" href="{{route('admin.login')}}">Admin login</a>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Login
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item" href="{{route('donorlogin')}}">User login</a>
+    <!-- <a class="dropdown-item" href="{{route('recipentlogin')}}">Recipent login</a>
+    <a class="dropdown-item" href="{{route('admin.login')}}">Admin login</a> -->
   </div>
 </div>
+</div>
 
-            </div>
+                <!-- <button class="btn login" onclick= "window.location.href = 'login.html';">Login</button>  -->
+                
+  <a class="btn signup" href ="{{route('register')}}" >Register</a>
+  @endif
+  
+
+            
         </nav>
     </section>
     <!-- Navbar 2 End -->

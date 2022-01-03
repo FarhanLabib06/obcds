@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\BloodcController;
 use App\Http\Controllers\Backend\NewcategoryController;
 use App\Http\Controllers\Website\PostController;
 use App\Http\Controllers\Website\UserprofileController;
+use App\Http\Controllers\Website\RequestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +49,11 @@ Route::post('/user/do/registration',[RegisterController::class,'doRegistration']
 Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
 Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
 Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
+//blood category
 Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
+Route::get('blood/category/list/{id}',[BloodcategoryCOntroller::class,'viewlist'])->name('blood.list');
+Route::get('blood/request/{id}',[RequestController::class,'request'])->name('blood.request');
+Route::post('blood/request/post',[RequestController::class,'dorequest'])->name('blood.dorequest');
 // post
 Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
 Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
@@ -56,6 +61,8 @@ Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
 Route::get('/comment/view',[PostController::class,'comment'])->name('comment.view');
 //profile
 Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
+
+
 
 //});
 

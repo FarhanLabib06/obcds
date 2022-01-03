@@ -5,69 +5,15 @@
 <br>
 <div class="row">
   <div class="col-sm-6">
+    @foreach($bloodcategory as $category)
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">A+</h5>
+        <h5 class="card-title">{{$category->blood_group}}</h5>
         <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
+        <a href="{{route('blood.list',$category->id)}}" class="btn btn-primary">Details</a>
       </div>
     </div>
+    @endforeach
   </div>
   <br>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">AB+</h5>
-        <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">B+</h5>
-        <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">B-</h5>
-        <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">O+</h5>
-        <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">O-</h5>
-        <p class="card-text">click to see details.</p>
-        <a href="#" class="btn btn-primary">Details</a>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-
 @endsection

@@ -10,4 +10,9 @@ class add_new_stock extends Model
     use HasFactory;
     protected $table="add_new_stocks";
     protected $fillable=['Stock_number','Blood_group','Collection_date','Expire_date','availability','In_stock'];
+
+    public function bloodcategory()
+    {
+        return $this->belongsTo(bloodtype::class,'blood_group','id');
+    }
 }
