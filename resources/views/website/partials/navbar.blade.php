@@ -68,7 +68,7 @@
                     </li>
                 </ul>
                 @if(auth()->user())
-                <a class="btn signup" href ="{{route('user.logout')}}" >Logout</a>
+                <a class="btn signup" href ="{{route('user.logout')}}" >{{auth()->user()->name}}|Logout</a>
                 <a class="btn signup" href ="{{route('profile.view')}}" >Profile</a>
                 @else
                 <div class="dropdown">

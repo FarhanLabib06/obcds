@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\add_new_stock;
+use App\Models\bloodtype;
 
 class StockController extends Controller
 {
     public function stock()
     {
-        $stock=add_new_stock::all();
+        $stock=add_new_stock::with('bloodcategory')->get();
         
 
         return view('admin.Layout.stock',compact('stock'));
@@ -23,8 +24,9 @@ class StockController extends Controller
     public function updateview($id)
     {
         $stock=add_new_stock::find($id);
+        $bloodgroup=bloodtype::all();
         // dd($stock);
-        return view('admin.layout.stockupdate',compact('stock'));
+        return view('admin.layout.stockupdate',compact('stock','bloodgroup'));
     }
     public function stockupdate(Request $request,$id)
     {
@@ -60,6 +62,6 @@ class StockController extends Controller
             
 
         ]);
-        return redirect()->route('admin.stock')->with('success','stock Updated Successfully.');
+        return redirect()->route('stock')->with('success','stock Updated Successfully.');
     }
 }

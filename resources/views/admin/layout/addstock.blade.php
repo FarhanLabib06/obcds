@@ -17,7 +17,7 @@
     <input name="id" required type="digit" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Blood Group</label>
     <select name="group" class="form-control" id="exampleFormControlSelect1">
       @foreach($categories as $category)
       <option value = "{{$category->id}}">{{$category->blood_group}}</option>

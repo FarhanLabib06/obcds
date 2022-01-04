@@ -29,9 +29,9 @@
                                         @foreach($stock as $key=>$b)
 
                                         <tr>
-                                            <td>{{($b->$key+1)}}</td>
+                                            <td>{{($key+1)}}</td>
                                             <td>{{($b->stock_number)}}</td>
-                                            <td>{{($b->blood_group)}}</td>
+                                            <td>{{(optional($b->bloodcategory)->blood_group)}}</td>
                                             <td>{{($b->collection_date)}}</td>
                                             <td>{{($b->expire_date)}}</td>
                                             <td>{{($b->availability)}}</td>

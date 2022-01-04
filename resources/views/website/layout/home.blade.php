@@ -17,7 +17,7 @@
     <section id="articles">
          @if(auth()->user())
         <div class="container">
-            <h2 style="display: inline-block;">Post</h2>
+            <h2 style="display: inline-block;">Article</h2>
             <div class="swiper-container">
             <div class="button-area" style="display: inline-block; margin-left: 850px;">
                     <div class="swiper-button-next"></div>

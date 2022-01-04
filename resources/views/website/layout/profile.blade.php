@@ -1,5 +1,14 @@
 @extends('website.master')
 @section('content')
+<script language="javascript">
+    function PrintDiv() {
+        var divToPrint = document.getElementById('divToPrint');
+        var popupWin = window.open('', '_blank', 'width=1100,height=700');
+        popupWin.document.open();
+        popupWin.document.write('<html><head><link href="http://127.0.0.1:8000/Backend/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+        popupWin.document.close();
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,14 +171,39 @@
 
 <!-- <a href="" style="text-decoration: none; text-align: center;"
    title="Green Agro"><h3>Login to the site first</h3></a> -->
-
-
+<div id="divToPrint">
+<h1>Users Requests</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Serial</th>
+      <th scope="col">Stock_id</th>
+      
+      <th scope="col">Amount</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      @foreach($bloodrequests as $key=>$bloodrequest)
+    <tr>
+      
+      <td>{{$key+1}}</td>
+      <td>{{$bloodrequest->stock_id}}</td>
+      <td>{{$bloodrequest->amount}}</td>
+      
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+</div>
+<form class="print_order">
+        <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
+    </form>
+    
 
 
 </body>
 </html>
-
-
 
 
 
