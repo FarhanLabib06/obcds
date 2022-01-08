@@ -35,72 +35,80 @@ use App\Http\Controllers\Website\RequestController;
 //     return view('admin.master');
 // });
 //website
-//Route::group(['prefix'=>'user'],function (){
-Route::get('/',[HomeController::class,'home'])->name('home');
-Route::get('/register',[RegisterController::class,'register'])->name('register');
-Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
-Route::get('/whoarewe',[HomeController::class,'whoweare'])->name('whoweare');
-Route::get('/contactus',[ContactusController::class,'contact'])->name('contactus');
-Route::get('/donorlogin',[DonorloginController::class,'donorlogin'])->name('donorlogin');
-Route::post('/user/dologin',[DonorloginController::class,'doLogin'])->name('user.do.login');
-Route::get('/recipentlogin',[RecipentloginController::class,'recipentlogin'])->name('recipentlogin');
+    Route::get('/',[HomeController::class,'home'])->name('home');
+    Route::get('/donorlogin',[DonorloginController::class,'donorlogin'])->name('donorlogin');
+    Route::post('/user/dologin',[DonorloginController::class,'doLogin'])->name('user.do.login');
+    Route::get('/register',[RegisterController::class,'register'])->name('register');
+    Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
+    Route::get('/whoarewe',[HomeController::class,'whoweare'])->name('whoweare');
 
-Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
-Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
-Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
-Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
-//blood category
-Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
-Route::get('blood/category/list/{id}',[BloodcategoryCOntroller::class,'viewlist'])->name('blood.list');
-Route::get('blood/request/{id}',[RequestController::class,'request'])->name('blood.request');
-Route::post('blood/request/post',[RequestController::class,'dorequest'])->name('blood.dorequest');
-// post
-Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
-Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
-Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
-Route::get('/comment/view',[PostController::class,'comment'])->name('comment.view');
-//profile
-Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
+    Route::group(['prefix'=>'user'],function (){
+        
+        Route::get('/recipentlogin',[RecipentloginController::class,'recipentlogin'])->name('recipentlogin');
 
+        Route::post('/user/do/registration',[RegisterController::class,'doRegistration'])->name('user.do.registration');
+        Route::get('/user/list',[UserController::class,'userlist'])->name('user.list');
+        Route::get('/user/dologout',[DonorloginController::class,'logout'])->name('user.logout');
+        Route::group(['middleware'=>['auth','user']],function(){
+        Route::post('/feedback/submit',[ContactusController::class,'feedbacksubmit'])->name('feedback.submit');
+        Route::get('/contactus',[ContactusController::class,'contact'])->name('contactus');
+        //blood category
+        Route::get('/blood/category',[BloodcategoryController::class,'bloodcategory'])->name('blood.category');
+        Route::get('blood/category/list/{id}',[BloodcategoryCOntroller::class,'viewlist'])->name('blood.list');
+        Route::get('blood/request/{id}',[RequestController::class,'request'])->name('blood.request');
+        Route::post('blood/request/post',[RequestController::class,'dorequest'])->name('blood.dorequest');
+        // post
+        Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
+        Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
+        Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
+        Route::get('/comment/view',[PostController::class,'comment'])->name('comment.view');
+        //profile
+        Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
+        Route::get('/profile/update/view/{id}',[UserprofileController::class,'profileup'])->name('update.profile.view');
+        Route::put('/profile/update/done/{id}',[UserprofileController::class,'profileupdate'])->name('do.update.profile');
+    });
+    
 
-
-//});
+});
 
 
 
 //Admin panel
 Route::group(['prefix'=>'admin'],function (){
     
-Route::get('/adminlogin',[AdminloginController::class,'login'])->name('admin.login');
-Route::post('/admin/dologin',[AdminloginController::class,'dologin'])->name('admin.do.login');
-Route::group(['middleware'=>['auth','admin']],function (){
-    Route::get('/', function () {
-        return view('admin.master');
-    });
-    
-Route::get('/admin/logout',[AdminloginController::class,'logout'])->name('admin.logout');
-Route::get('/admin',[AdminController::class,'test'])->name('test');
-Route::get('/stock',[StockController::class,'stock'])->name('stock');
-Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
-Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
-Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
-Route::get('/User/delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
-Route::get('/user/registration/approve',[RegistrationapprovalController::class,'approve'])->name('registration.approve');
-//feedback route
-Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
-Route::get('/feedback/view/{id}',[FeedbackController::class,'feedbackview'])->name('admin.feedbackview');
-Route::get('/feedback/delete/{id}',[FeedbackCOntroller::class,'feedbackdelete'])->name('feedback.delete');
-//add stock route
-Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
-Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
-Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
-Route::get('/stock/update/view/{id}',[StockController::class,'updateview'])->name('stock.update.view');
-Route::put('/stock/update/{id}',[StockController::class,'stockupdate'])->name('stock.update');
-//bloodcategory
-Route::get('/blood/category',[BloodcController::class,'bloodcat'])->name('blood.cat');
-Route::get('new/blood/category',[NewcategoryController::class,'newcategory'])->name('new.blood.cat');
-Route::post('blood/submit',[NewcategoryController::class,'newstore'])->name('create.new');
-Route::get('blood/cat/view',[BloodcController::class,'category'])->name('view.table');
+    Route::get('/adminlogin',[AdminloginController::class,'login'])->name('admin.login');
+    Route::post('/admin/dologin',[AdminloginController::class,'dologin'])->name('admin.do.login');
+    Route::group(['middleware'=>['auth','admin']],function (){
+        Route::get('/', function () {
+            return view('admin.master');
+        });
+        
+        Route::get('/admin/logout',[AdminloginController::class,'logout'])->name('admin.logout');
+        Route::get('/admin',[AdminController::class,'test'])->name('test');
+        Route::get('/stock',[StockController::class,'stock'])->name('stock');
+        Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
+        Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
+        Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
+        Route::get('/User/delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
+        Route::get('/user/registration/approve',[RegistrationapprovalController::class,'approve'])->name('registration.approve');
+        //feedback route
+        Route::get('/feedback',[FeedbackController::class,'feedback'])->name('feedback');
+        Route::get('/feedback/view/{id}',[FeedbackController::class,'feedbackview'])->name('admin.feedbackview');
+        Route::get('/feedback/delete/{id}',[FeedbackCOntroller::class,'feedbackdelete'])->name('feedback.delete');
+        //add stock route
+        Route::get('/addstock',[AddstockController::class,'addstock'])->name('addstock');
+        Route::post('/blood/stock',[AddstockController::class,'store'])->name('store');
+        Route::get('/stock/delete/{id}',[StockController::class,'stockdelete'])->name('stock.delete');
+        Route::get('/stock/update/view/{id}',[StockController::class,'updateview'])->name('stock.update.view');
+        Route::put('/stock/update/{id}',[StockController::class,'stockupdate'])->name('stock.update');
+        //bloodcategory
+        Route::get('/blood/category',[BloodcController::class,'bloodcat'])->name('blood.cat');
+        Route::get('new/blood/category',[NewcategoryController::class,'newcategory'])->name('new.blood.cat');
+        Route::post('blood/submit',[NewcategoryController::class,'newstore'])->name('create.new');
+        Route::get('blood/cat/view',[BloodcController::class,'category'])->name('view.table');
+        //approval
+        Route::get('/user/approval/{id}',[UserController::class,'approve'])->name('user.approve');
+
    
 });
 });

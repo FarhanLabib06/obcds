@@ -10,7 +10,7 @@ class RegistrationapprovalController extends Controller
 {
     public function approve()
     {
-        $userdata=User::all();
+        $userdata=User::where('active','0')->get();
         return view('admin.layout.registerapproval',compact('userdata'));
     }
 

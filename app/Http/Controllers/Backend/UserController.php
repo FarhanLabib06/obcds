@@ -17,4 +17,15 @@ class UserController extends Controller
        User::find($id)->delete();
        return redirect()->back()->with('success','User Removed.');
     }
+
+     public function approve($id)
+    {
+        $data=User::find($id);
+       $data->active='1';
+       $data->save();
+       return redirect()->back()->with('success','User Removed.');
+    }
+
+
+
 }

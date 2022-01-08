@@ -19,13 +19,14 @@
                                             <th>Role</th>
                                             <th>Address</th>
                                             <th>Phone</th>
+                                            <th>Active</th>
                                             <th>Approve</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     @foreach($userdata as $key=>$a)
                                              <tr>
-                                            <td>{{($a->$key+1)}}</td>
+                                            <td>{{($key+1)}}</td>
                                             <td>{{($a->name)}}</td>
                                             <td>{{($a->gender)}}</td>
                                             <td>{{($a->email)}}</td>
@@ -33,8 +34,9 @@
                                             <td>{{($a->role)}}</td>
                                             <td>{{($a->address)}}</td>
                                             <td>{{($a->phone)}}</td>
+                                            <td>{{($a->active)}}</td>
                                             <td>
-                                                <a  class="btn btn-outline-primary" href="">Approve</a>
+                                                <a  class="btn btn-outline-primary" href="{{route('user.approve',$a->id)}}">Approve</a>
                                             </td>
                                              <td>
                                                 <a  class="btn btn-outline-primary" href="">Delete</a>

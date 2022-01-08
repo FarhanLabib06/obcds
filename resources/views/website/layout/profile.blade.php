@@ -82,8 +82,9 @@
                 <div class="tab-pane active" id="home">
                     <hr>
 
-                    <form class="form" action="#" method="post" id="registrationForm">
-                        <!-- csrf -->
+                    <form class="form" action="{{route('do.update.profile',$user)}}" method="post" id="registrationForm">
+                        @method('PUT')
+                        @csrf
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="first_name"><h4>name</h4></label>
@@ -122,6 +123,13 @@
                                        name ="inputCity" placeholder="enter city name" title="enter your city.">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label for="inputCity"><h4>Role</h4></label>
+                                <input value="{{auth()->user()->role}}" type="text" class="form-control" id="inputCity"
+                                       name ="inputCity" placeholder="enter city name" title="enter your city.">
+                            </div>
+                        </div>
 
                         <!-- <div class="form-group">
                             <div class="col-xs-6">
@@ -151,11 +159,10 @@
                                 <button class="btn btn-lg btn-success" type="submit"><i
                                         class="glyphicon glyphicon-ok-sign"></i> Update
                                 </button>
-                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>
-                                    Reset
-                                </button>
+                                
                             </div>
                         </div>
+                        
                     </form>
 
                     <hr>
