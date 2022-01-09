@@ -39,7 +39,7 @@
                                                 <a  class="btn btn-outline-primary" href="{{route('user.approve',$a->id)}}">Approve</a>
                                             </td>
                                              <td>
-                                                <a  class="btn btn-outline-primary" href="">Delete</a>
+                                                <a  class="btn btn-outline-primary" href="{{route('user.delete',$a->id)}}">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach

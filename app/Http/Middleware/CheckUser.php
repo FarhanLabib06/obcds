@@ -16,12 +16,12 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->active=='user' || auth()->user()->active=='donor'){
-        return $next($request);
+        if(auth()->user()->active=='1' || auth()->user()->active=='1')
+        {
+            return $next($request);
         }
-        // else
-        // {
-        //     return redirect()->route('donorlogin')->with('error','Permission denied.');
-        // }
+       
+            return redirect()->route('donorlogin')->with('error','Permission denied.');
+        
     }
 }
