@@ -144,17 +144,20 @@
 <section class="content-item" id="comments">
     <div class="container">   
         <div class="row">
-            <div class="col-sm-8">   
-                <form>
+            <div class="col-sm-8"> 
+                @csrf
+                <form action="{{route('comment.do',$post->id)}}" method="post">
+                    @csrf
                     <h3 class="pull-left">New Comment</h3>
-                    <button type="submit" class="btn btn-normal pull-right">Submit</button>
+                    <button type="submit" class="btn btn-info">submit</button>
+                    <!-- <a type="submit" class="btn btn-normal pull-right">Submit</a> -->
                     <fieldset>
                         <div class="row">
                             <!-- <div class="col-sm-3 col-lg-2 hidden-xs">
                                 <img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                             </div> -->
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="message" placeholder="Your message" required=""></textarea>
+                                <input name="text" textarea class="form-control" id="message" placeholder="Your message" required=""></input>
                             </div>
                         </div>      
                     </fieldset>
@@ -173,8 +176,8 @@
                             <li><i class="fa fa-thumbs-up"></i>13</li>
                         </ul>
                         <ul class="list-unstyled list-inline media-detail pull-right">
-                            <li class=""><a href="">Like</a></li>
-                            <li class=""><a href="">Reply</a></li>
+                            <li class="" name="like"><a href="">Like</a></li>
+                            <li class="" name="reply"><a href="">Reply</a></li>
                         </ul>
                     </div>
                 </div>

@@ -61,7 +61,9 @@ use App\Http\Controllers\Website\RequestController;
         Route::get('/post/create',[PostController::class,'postcreate'])->name('post.page');
         Route::post('/post/done',[PostController::class,'dopost'])->name('post.done');
         Route::get('/post/view',[PostController::class,'viewpost'])->name('post.view');
-        Route::get('/comment/view',[PostController::class,'comment'])->name('comment.view');
+        //comment
+        Route::get('/comment/view/{id}',[PostController::class,'comment'])->name('comment.view');
+        Route::post('/comment/post/{id}',[PostController::class,'docomment'])->name('comment.do');
         //profile
         Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
         Route::get('/profile/update/view/{id}',[UserprofileController::class,'profileup'])->name('update.profile.view');

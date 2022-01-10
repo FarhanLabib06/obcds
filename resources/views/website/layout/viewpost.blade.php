@@ -24,7 +24,7 @@
                                 <h4 class="card-title">{{$p->title}}</h4>
                                 <p class="card-text">{{$p->messege}}</p>
                                 <div class="btn-cont">
-                                    <a href ="{{route('comment.view')}}">Details</a>
+                                    <a href ="{{route('comment.view',$p->id)}}">Details</a>
                                 </div>
                             </div>
                         </div>
