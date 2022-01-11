@@ -19,7 +19,7 @@ class RequestController extends Controller
     public function dorequest(Request $request)
     {
         
-        //dd($request->all());
+        dd($request->all());
          bloodrequest::create([
             'user_id'=>$request->user_id,
             'stock_id'=>$request->stock_id,

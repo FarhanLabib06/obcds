@@ -32,7 +32,8 @@ class PostController extends Controller
         // dd($id);
         $post = Post::find($id);
         // dd($post->id);
-        return view('website.layout.comment',compact('post'));
+        $comment = Commnet::with('user')->get();
+        return view('website.layout.comment',compact('post','comment'));
     }
     public function docomment(Request $request,$id)
     {

@@ -16,11 +16,11 @@
       <th>Collection date</th>
       <th>Expire date</th>
       <th>Availability</th>
+      <th>Amount</th>
       <!-- <th>In stock</th> -->
       <th>Action</th>
     </tr>
   </thead>
-
   <tbody>
       @foreach($list as $key=>$g)
     <tr>
@@ -29,6 +29,7 @@
       <td>{{($g->collection_date)}}</td>
       <td>{{($g->expire_date)}}</td>
       <td>{{($g->availability)}}</td>
+      <td>{{($g->in_stock)}}</td>
       @php 
         $data = $g->in_stock;
         $available = $data + $available;

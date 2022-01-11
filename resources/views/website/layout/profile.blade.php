@@ -130,7 +130,7 @@
                                        name ="inputCity" placeholder="enter city name" title="enter your city.">
                             </div>
                         </div>
-                         
+                         @if(auth()->user()->role=='donor')
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="inputAddress2"><h4>Donation date</h4></label>
@@ -138,6 +138,8 @@
                                        name="inputAddress2" placeholder="enter state name" title="enter your address if any.">
                             </div>
                         </div>
+                        @endif
+                        
                         
 
                         <!-- <div class="form-group">
@@ -160,11 +162,15 @@
                                 <button class="btn btn-lg btn-success" type="submit"><i
                                         class="glyphicon glyphicon-ok-sign"></i> Update
                                 </button>
-                                
+                                 @if(auth()->user()->role=='donor')
+                                 <button type="button" class="btn btn-success">Sell Blood</button>
+                                 @endif                                
                             </div>
                         </div>
                         
+
                     </form>
+                    
 
                     <hr>
 
