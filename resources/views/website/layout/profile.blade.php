@@ -73,10 +73,19 @@
             </div> -->
 
         </div><!--/col-3-->
+        
         <div class="col-sm-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">User Profile</a></li>
+                <li class="active"><a data-toggle="tab" href="#">User Profile</a></li>
+                @if(auth()->user()->role == 'donor')
+                @if($candonate == true)
+                <li class="active"><a style="color: #07b52a !important;" data-toggle="tab" href="#">Can Donate</a></li>
+                @else
+                <li class="active"><a style="color: #e80e0e !important;" data-toggle="tab" href="#">Can't Donate</a></li>
+                @endif
+                @endif
             </ul>
+            
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
@@ -134,8 +143,8 @@
                         <div class="form-group">
                             <div class="col-xs-6">
                                 <label for="inputAddress2"><h4>Donation date</h4></label>
-                                <input value="" type="date" class="form-control" id="inputAddress2"
-                                       name="inputAddress2" placeholder="enter state name" title="enter your address if any.">
+                                <input value="{{auth()->user()->donationdate}}" type="date" class="form-control" id="inputAddress2"
+                                       name="donationdate" placeholder="enter state name" title="enter your address if any.">
                             </div>
                         </div>
                         @endif
@@ -181,7 +190,11 @@
 
     </div><!--/col-9-->
 </div><!--/row-->
-
+<div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#"> Profile</a></li>
+            </ul>
+        </div>
 
 <!-- <a href="" style="text-decoration: none; text-align: center;"
    title="Green Agro"><h3>Login to the site first</h3></a> -->

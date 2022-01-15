@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->string('password');
             $table->integer('active')->default('0');
+            $table->date('donationdate')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
