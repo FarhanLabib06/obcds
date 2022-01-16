@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\NewcategoryController;
 use App\Http\Controllers\Website\PostController;
 use App\Http\Controllers\Website\UserprofileController;
 use App\Http\Controllers\Website\RequestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,6 +112,8 @@ Route::group(['prefix'=>'admin'],function (){
         //approval and delete
         Route::get('/user/approval/{id}',[UserController::class,'approve'])->name('user.approve');
         Route::get('user/delete/{id}',[UserController::class,'registrationdelete'])->name('user.delete');
+        //Report
+        
 
    
 });

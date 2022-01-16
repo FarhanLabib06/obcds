@@ -14,4 +14,5 @@ class BloodrequestController extends Controller
         return view('admin.layout.bloodrequest',compact('requestview'));
     }
     
+    
 }

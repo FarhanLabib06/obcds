@@ -20,6 +20,7 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id');
             $table->string('like')->nullable();
             $table->text('reply')->nullable();
+            $table->softdeletes();
             $table->timestamps();
         });
     }

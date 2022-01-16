@@ -16,10 +16,9 @@
                                             <th>serial</th>
                                             <th>user id</th>
                                             <th>stock id</th>
-                                            <th>Blood id</th>
                                             <th>ammount</th>
-                                            <th>Delete</th>
-                                            <th>Update</th>
+                                            <th>Action</th>
+                                            
                                         </tr>
                                     </thead>
                                     
@@ -31,16 +30,16 @@
                                             <td>{{($v->user_id)}}</td>
                                             <td>{{($v->stock_id)}}</td>
                                             <td>{{($v->amount)}}</td>
-                                            <td></td>
+                                            
                                             
                                             
                                             
                                             <td>
                                                 <a  class="btn btn-outline-primary" href="#">Delete</a>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <a  class="btn btn-outline-primary" href="#">Update</a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                        @endforeach
                                     </tbody>

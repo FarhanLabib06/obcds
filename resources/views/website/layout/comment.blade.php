@@ -145,7 +145,7 @@
     <div class="container">   
         <div class="row">
             <div class="col-sm-8"> 
-                @csrf
+               @if(!empty($post))
                 <form action="{{route('comment.do',$post->id)}}" method="post">
                     @csrf
                     <h3 class="pull-left">New Comment <br><br></h3>
@@ -162,10 +162,14 @@
                         </div>      
                     </fieldset>
                 </form>
+                @else
+                <P>This post is not a valid post.</P>
+                @endif
                 
                 <h3>Comments</h3>
                 
                 <!-- COMMENT 1 - START -->
+                @if(!empty($comment))
                 @foreach($comment as $comments)
                 <div class="media">
                     <!-- <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a> -->
@@ -183,6 +187,9 @@
                     </div>
                 </div>
                 @endforeach
+                @else
+                    <p>No comments for this post</p>
+                @endif
                 <!-- COMMENT 1 - END -->
                 
                 <!-- COMMENT 2 - START -->

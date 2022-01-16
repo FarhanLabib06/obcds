@@ -85,6 +85,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Blood category
                             </a>
+                            
                         </div>
                         
                     </div>

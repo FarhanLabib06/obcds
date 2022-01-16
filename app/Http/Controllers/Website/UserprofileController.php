@@ -74,7 +74,7 @@ class UserprofileController extends Controller
             'role'=>$request->inputCity,
             'donationdate'=>$request->donationdate
         ]);
-         return redirect()->route('profile.view')->with('success','stock Updated Successfully.');
+         return redirect()->route('profile.view')->with('success','profile Updated Successfully.');
 
     }
     // public function donationdate()

@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->text('title');
             $table->text('messege');
             $table->timestamps();
+            $table->softdeletes();
         });
     }
 
