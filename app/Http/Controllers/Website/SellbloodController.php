@@ -18,7 +18,9 @@ class SellbloodController extends Controller
         sellblood::create([
             'user_id'=>$request->user_id,
             'amount' =>$request->amount,
-            'blood_type'=>$request->blood_type
+            'blood_type'=>$request->blood_type,
+            'date'=>$request->date,
+            'price'=>$request->price
         ]);
         return redirect()->back();
     }

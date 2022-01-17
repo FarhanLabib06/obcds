@@ -15,14 +15,16 @@
                     <select name="blood_type" id="type" required="">
                         <option disabled>Blood Type</option>
                         <option value="A">A</option>
-                        <option value="O">A+</option>
-                        <option value="B">B+</option>
-                        <option value="O">B-</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
                         <option value="O">O</option>
-                        <option value="O">O-</option>
-                        <option value="O">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="O+">O+</option>
                         <option value="AB+">AB+</option>
                     </select>
+                    <input name="date" type="date" placeholder="date" required>
+                    <input name="price" type="bigInteger" placeholder="price" required>
                     <div class="reg-group">
                         <button class="submit" type="submit" style="background-color: rgb(51, 58, 65);">Submit</button>
                     </div>

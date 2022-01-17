@@ -18,7 +18,8 @@ class CreateSellsBloodTable extends Migration
             $table->foreignid('user_id');
             $table->integer('amount');
             $table->string('blood_type');
-            
+            $table->date('date');
+            $table->bigInteger('price');
             $table->timestamps();
         });
     }
