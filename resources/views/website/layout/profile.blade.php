@@ -172,7 +172,7 @@
                                         class="glyphicon glyphicon-ok-sign"></i> Update
                                 </button>
                                  @if(auth()->user()->role=='donor')
-                                 <button type="button" class="btn btn-success">Sell Blood</button>
+                                 <a type="button" class="btn btn-success" href="{{route('view.sell.blood')}}">Sell Blood</a>
                                  @endif                                
                             </div>
                         </div>

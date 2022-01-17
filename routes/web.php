@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\NewcategoryController;
 use App\Http\Controllers\Website\PostController;
 use App\Http\Controllers\Website\UserprofileController;
 use App\Http\Controllers\Website\RequestController;
+use App\Http\Controllers\Website\SellbloodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,9 @@ use App\Http\Controllers\Website\RequestController;
         Route::get('/profile/view',[UserprofileController::class,'profile'])->name('profile.view');
         Route::get('/profile/update/view/{id}',[UserprofileController::class,'profileup'])->name('update.profile.view');
         Route::put('/profile/update/done/{id}',[UserprofileController::class,'profileupdate'])->name('do.update.profile');
+        //sellblood
+        Route::get('/sell/blood/view',[SellbloodController::class,'sellblood'])->name('view.sell.blood');
+        Route::post('/sell/blood/submit',[SellbloodController::class,'submitsell'])->name('submit.sell');
     });
     
 
@@ -91,6 +95,7 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/stock',[StockController::class,'stock'])->name('stock');
         Route::get('/Donorlist',[AdminController::class, 'donorlist'])->name('donorlist');
         Route::get('/bloodrequest',[BloodrequestController::class, 'bloodrequest'])->name('bloodrequest');
+        Route::get('/bloodrequest/delete/{id}',[BloodrequestController::class,'requestdelete'])->name('request.delete');
         Route::get('/Recipentlist', [AdminController::class, 'recipentlist'])->name('recipentlist');
         Route::get('/User/delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
         Route::get('/user/registration/approve',[RegistrationapprovalController::class,'approve'])->name('registration.approve');
@@ -112,7 +117,7 @@ Route::group(['prefix'=>'admin'],function (){
         //approval and delete
         Route::get('/user/approval/{id}',[UserController::class,'approve'])->name('user.approve');
         Route::get('user/delete/{id}',[UserController::class,'registrationdelete'])->name('user.delete');
-        //Report
+        
         
 
    

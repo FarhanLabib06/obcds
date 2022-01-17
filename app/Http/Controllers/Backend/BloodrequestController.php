@@ -13,6 +13,11 @@ class BloodrequestController extends Controller
         $requestview=bloodrequest::all();
         return view('admin.layout.bloodrequest',compact('requestview'));
     }
-    
+     public function requestdelete($id)
+    {
+       // dd($id);
+       bloodrequest::find($id)->delete();
+       return redirect()->back()->with('success','request Deleted.');
+    }
     
 }

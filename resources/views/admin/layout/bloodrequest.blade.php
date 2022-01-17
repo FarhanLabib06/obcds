@@ -35,7 +35,7 @@
                                             
                                             
                                             <td>
-                                                <a  class="btn btn-outline-primary" href="#">Delete</a>
+                                                <a  class="btn btn-outline-primary" href="{{route('request.delete',$v->id)}}">Delete</a>
                                             </td>
                                             <!-- <td>
                                                 <a  class="btn btn-outline-primary" href="#">Update</a>

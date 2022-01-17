@@ -57,7 +57,7 @@
                         <a class="nav-link" href="{{route('post.view')}}">View Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('blood.category')}}">Blood category</a>
+                        <a class="nav-link" href="{{route('blood.category')}}">Blood Request</a>
                     </li>
                     @endif
                     <li class="nav-item">
