@@ -15,7 +15,7 @@
         </div>
     </section>
     <section id="articles">
-         @if(auth()->user())
+        
         <div class="container">
             <h2 style="display: inline-block;">Article</h2>
             <div class="swiper-container">
@@ -105,7 +105,7 @@
                 </div>
             </div>
         </div>
-        @endif
+        
     </section>
     <!-- Articles End -->
 
