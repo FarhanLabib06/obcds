@@ -1,14 +1,6 @@
 @extends('website.master')
 @section('content')
-<script language="javascript">
-    function PrintDiv() {
-        var divToPrint = document.getElementById('divToPrint');
-        var popupWin = window.open('', '_blank', 'width=1100,height=700');
-        popupWin.document.open();
-        popupWin.document.write('<html><head><link href="http://127.0.0.1:8000/Backend/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
-        popupWin.document.close();
-    }
-</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,6 +139,17 @@
                                        name="donationdate" placeholder="enter state name" title="enter your address if any.">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="inputAddress2"><h4>Sell Status</h4></label>
+                                @php
+                                $status = $status->pluck('status');
+                                @endphp
+                                <input value="{{$status}}" type="text" class="form-control" id="inputAddress2"
+                                       name="donationdate" placeholder="sell status" title="enter your address if any.">
+                            </div>
+                        </div>
+
                         @endif
                         
                         
@@ -198,7 +201,7 @@
 
 <!-- <a href="" style="text-decoration: none; text-align: center;"
    title="Green Agro"><h3>Login to the site first</h3></a> -->
-<div id="divToPrint">
+<div class="card" id="printableArea">
 <h1>Users Requests</h1>
 <table class="table table-striped">
   <thead>
@@ -223,9 +226,8 @@
   </tbody>
 </table>
 </div>
-<form class="print_order">
-        <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
-    </form>
+
+<a href="#" class="btn btn-primary" onclick="printDiv('printableArea')">Print</a>
     
 
 
@@ -244,9 +246,20 @@
 
 
 
-
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 
 
 
 
 @endsection
+
+
+

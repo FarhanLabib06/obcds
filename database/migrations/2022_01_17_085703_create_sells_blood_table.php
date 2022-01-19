@@ -20,6 +20,7 @@ class CreateSellsBloodTable extends Migration
             $table->string('blood_type');
             $table->date('date');
             $table->bigInteger('price');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

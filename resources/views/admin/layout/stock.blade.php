@@ -3,7 +3,7 @@
 
  <div class="card mb-4">
      <a class="btn btn-primary" href="{{route('addstock')}}" role="button">Add New Stock</a>
-    <div id="divToPrint">
+    <div class="card" id="printableArea">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Stock list
@@ -51,18 +51,17 @@
                         </div>
                         
 </div>
-<form class="print_order">
-        <input class="btn btn-primary" type="button" onClick="PrintDiv();" value="Print">
-    </form>
+<a href="#" class="btn btn-primary" onclick="printDiv('printableArea')">Print</a>
 
-                    
-@endsection
-  <script language="javascript">
-    function PrintDiv() {
-        var divToPrint = document.getElementById('divToPrint');
-        var popupWin = window.open('', '_blank', 'width=1100,height=700');
-        popupWin.document.open();
-        popupWin.document.write('<html><head><link href="http://127.0.0.1:8000/Backend/css/style.css" rel="stylesheet"></head><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
-        popupWin.document.close();
+<script type="text/javascript">
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
     }
 </script>
+                    
+@endsection
+  

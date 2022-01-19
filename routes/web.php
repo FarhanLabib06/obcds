@@ -119,7 +119,9 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/user/approval/{id}',[UserController::class,'approve'])->name('user.approve');
         Route::get('user/delete/{id}',[UserController::class,'registrationdelete'])->name('user.delete');
         //Bloodsell
-        Route::get('/blood/sell/view',[BloodsellviewController::class,'bloodsellview'])->name('blood.sale');        
+        Route::get('/blood/sell/view',[BloodsellviewController::class,'bloodsellview'])->name('blood.sale');
+        Route::get('/blood/sell/approved/{id}',[BloodsellviewController::class,'approve'])->name('blood.sale.approve'); 
+        Route::get('/blood/sell/delete/{id}',[BloodsellviewController::class,'delete'])->name('blood.sale.delete');       
         
 
    

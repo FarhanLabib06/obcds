@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Website;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\bloodrequest;
-use App\Models\User;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\sellblood;
+use App\Models\bloodrequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class UserprofileController extends Controller
 {
@@ -19,6 +20,10 @@ class UserprofileController extends Controller
         // dd($bloodrequests);
         // dd();
         if (auth()->user()->role == 'donor') {
+
+            $status = sellblood::where('user_id',$user)->get();
+            // dd($status);
+
              $candonate = false;
             $now = Carbon::now();
 
@@ -30,10 +35,10 @@ class UserprofileController extends Controller
             // dd($length);
             if($length>2160) {
                 $candonate = true;
-                return view('website.layout.profile',compact('bloodrequests','user','candonate'));
+                return view('website.layout.profile',compact('bloodrequests','user','candonate','status'));
             }
             else {
-                return view('website.layout.profile',compact('bloodrequests','user','candonate'));
+                return view('website.layout.profile',compact('bloodrequests','user','candonate','status'));
                 
             }
         } else {
@@ -44,16 +49,7 @@ class UserprofileController extends Controller
        
 
 
-    //     foreach($ddate as $key => $date){
-    //         $donation_date = $date->donatiodate;
-
-    //         $diffInHours = Carbon::parse($donation_date);
-    //         $length = $diffInHours->diffInHours($now);
-
-    //         // if($length>2160) {
-    //         //     $date->
-    //         // }
-    //     }
+    
 
     }
     public function profileup($id)
