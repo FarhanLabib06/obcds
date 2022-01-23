@@ -19,6 +19,7 @@ class PostController extends Controller
         Post::create([
             'title'=>$request->input('title'),
             'messege'=>$request->input('messege'),
+            'user_id'=>auth()->user()->id
         ]);
         return redirect()->back();
     }
@@ -26,7 +27,7 @@ class PostController extends Controller
     {
         $now = Carbon::now();
 
-        $post=Post::all();
+        $post=Post::with('user')->get();
         // dd($post);
         foreach($post as $key => $dpost){
             $delete_post = $dpost->created_at;

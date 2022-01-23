@@ -21,10 +21,10 @@
                             </div>
                             <div class="card-body">
 
-                                <h4 class="card-title">{{$p->title}}</h4>
+                                <h4 class="card-title">{{$p->title}} Username: {{$p->user->name}}</h4>
                                 <p class="card-text">{{$p->messege}}</p>
                                 <div class="btn-cont">
-                                    <a href ="{{route('comment.view',$p->id)}}">Details</a>
+                                    <a href ="{{route('comment.view',$p->id)}}">Comments</a>
                                 </div>
                             </div>
                         </div>

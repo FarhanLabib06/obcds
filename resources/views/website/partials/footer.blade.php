@@ -1,5 +1,5 @@
 <!-- Footer Start -->
-    <section id="footer">
+    <section id="footer" style="width: 100%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
