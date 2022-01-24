@@ -20,8 +20,11 @@
                     <select name="blood_type" id="type" required="">
                         <option disabled>Blood Type</option>
                         <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="O">O</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
                         <option value="AB+">AB+</option>
                     </select>
 
@@ -39,7 +42,7 @@
 
                     <input name="phone" type="number" placeholder="Phone Number" required>
 
-                    <input name="password" type="pasword" placeholder="Password" required="">
+                    <input name="password" type="password" placeholder="Password" required>
                     <!-- <input type="date" name="donate-day"> -->
                     <div class="reg-group">
                         <input class="check" type="checkbox" required="" style="height: auto; display:inline; margin: 0 auto;">Agree on terms and conditions<br>

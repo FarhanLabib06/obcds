@@ -54,11 +54,12 @@ class UserprofileController extends Controller
     }
     public function profileup($id)
     {
-        dd($id);
+        // dd($id);
         return view('website.layout.updateprofile');
     }
     public function profileupdate(Request $request,$id)
     {
+        // dd($request->all());
         $user=User::find($id);
         // dd($request->all());
         $user->update([

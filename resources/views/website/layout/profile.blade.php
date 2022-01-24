@@ -139,17 +139,8 @@
                                        name="donationdate" placeholder="enter state name" title="enter your address if any.">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="inputAddress2"><h4>Sell Status</h4></label>
-                                @php
-                                $status = $status->pluck('status');
-                                @endphp
-                                <input value="{{$status}}" type="text" class="form-control" id="inputAddress2"
-                                       name="donationdate" placeholder="sell status" title="enter your address if any.">
-                            </div>
-                        </div>
 
+                        
                         @endif
                         
                         
@@ -175,7 +166,7 @@
                                         class="glyphicon glyphicon-ok-sign"></i> Update
                                 </button>
                                  @if(auth()->user()->role=='donor')
-                                 <a type="button" class="btn btn-success" href="{{route('view.sell.blood')}}">Sell Blood</a>
+                                 <a type="button" class="btn btn-success" href="{{route('sell.table')}}">Sell Blood</a>
                                  @endif                                
                             </div>
                         </div>

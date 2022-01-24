@@ -16,7 +16,7 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->active=='1' || auth()->user()->active=='1')
+        if(auth()->user()->role=='user' || auth()->user()->role=='donor')
         {
             return $next($request);
         }
