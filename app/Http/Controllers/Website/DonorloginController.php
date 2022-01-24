@@ -25,10 +25,10 @@ class DonorloginController extends Controller
             //dd("true");
             // dd(auth()->user());
             if (auth()->user()->active == 1) {
-                return redirect()->route('home')->with('sucess','login successfull.');
+                return redirect()->route('home')->with('message','login successfull.');
             } else {
                 Auth::logout();
-                return redirect()->back()->with('error','wait for approval');
+                return redirect()->back()->with('error','wait for approval.');
             }
             
             
@@ -39,6 +39,6 @@ class DonorloginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message','Logging out.');
     }
 }

@@ -1,15 +1,15 @@
 @extends('admin.master')
 @section('content')
-<h1>Add New Stock</h1> 
-@if($errors->any())
-<div class="alert alert-danger">
-  <ul>
-    @foreach ($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-</div>
+@if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
 @endif
+
+@if(session()->has('error'))
+    <p class="alert alert-danger">{{session()->get('error')}}</p>
+@endif
+
+<h1>Add New Stock</h1> 
+
 <form action="{{route('store')}}" method="post">
   @csrf
     <div class="mb-3">

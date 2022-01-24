@@ -37,6 +37,6 @@ class AddstockController extends Controller
             'In_stock'=>$request->instock,
             'Donor_id'=>$request->id,
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message',' new stock added!');
     }
 }

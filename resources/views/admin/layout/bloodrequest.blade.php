@@ -26,7 +26,7 @@
                                         
                                       @foreach($requestview as $key=>$v)
                                         <tr>
-                                            <td>{{($v->key+1)}}</td>
+                                            <td>{{($key+1)}}</td>
                                             <td>{{($v->user_id)}}</td>
                                             <td>{{($v->stock_id)}}</td>
                                             <td>{{($v->amount)}}</td>

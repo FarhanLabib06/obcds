@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
 
+
  <div class="card mb-4">
      <a class="btn btn-primary" href="{{route('addstock')}}" role="button">Add New Stock</a>
     <div class="card" id="printableArea">

@@ -21,7 +21,7 @@ class PostController extends Controller
             'messege'=>$request->input('messege'),
             'user_id'=>auth()->user()->id
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message','Post created.');
     }
     public function viewpost()
     {

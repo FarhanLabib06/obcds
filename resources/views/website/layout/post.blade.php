@@ -1,5 +1,10 @@
 @extends('website.master')
 @section('content')
+
+@if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
 <section id="contact">
         <div class="container">
             
