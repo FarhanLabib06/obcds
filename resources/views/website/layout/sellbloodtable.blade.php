@@ -2,7 +2,7 @@
 @section('content')
 
 <h1>Blood Sells</h1>
-<a class="btn btn-primary" href="{{route('view.sell.blood')}}" role="button">Sell Blood</a>
+<a class="btn btn-primary" href="{{route('view.sell.blood')}}" role="button" style="margin-left: 30px; margin-bottom: 30px;">Sell Blood</a>
 <table class="table table-striped">
   <thead>
      
