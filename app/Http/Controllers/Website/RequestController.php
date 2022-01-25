@@ -40,16 +40,14 @@ class RequestController extends Controller
                 $stock->update([
                     'availability'=>'not available'
                 ]);
-            return redirect()->route('blood.category');
+            return redirect()->back();
             }
-            return redirect()->route('blood.category');
-
         }else {
             if ($stock->in_stock == 0) {
                 $stock->update([
                     'availability'=>'not available'
                 ]);
-            return redirect()->route('blood.category')->with('message','out of stock.');
+            return redirect()->back()->with('message','out of stock.');
             }
         }
         
