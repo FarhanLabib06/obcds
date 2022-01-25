@@ -1,5 +1,8 @@
 @extends('website.master')
 @section('content')
+@if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
 <section id="sign-up">
         <div class="container">
                 <img src="{{url('website/imgs/logo.png')}}" alt="">
