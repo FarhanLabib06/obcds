@@ -29,7 +29,6 @@ class RequestController extends Controller
         //     // dd($newamount);
         // }
         $stock = add_new_stock::find($id);
-        // dd($stock->in_stock);
         if ($stock->in_stock >= $request->amount) {
              $bloodrequest=bloodrequest::create([
                 'user_id'=>$request->user_id,
@@ -37,9 +36,21 @@ class RequestController extends Controller
                 'amount'=>$request->amount
             ]);
             $decrease= add_new_stock::where('id',$id)->decrement('in_stock',$bloodrequest->amount);
-            return redirect()->back();
+            if ($stock->in_stock == 0) {
+                $stock->update([
+                    'availability'=>'not available'
+                ]);
+            return redirect()->route('blood.category');
+            }
+            return redirect()->route('blood.category');
+
         }else {
-            return redirect()->back()->with('message','out of stock.');
+            if ($stock->in_stock == 0) {
+                $stock->update([
+                    'availability'=>'not available'
+                ]);
+            return redirect()->route('blood.category')->with('message','out of stock.');
+            }
         }
         
             // dd($newamount);
