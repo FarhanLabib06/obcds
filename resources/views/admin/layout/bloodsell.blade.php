@@ -1,6 +1,14 @@
 @extends('admin.master')
 @section('content')
 
+@if(session()->has('message'))
+    <p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
+
+@if(session()->has('error'))
+    <p class="alert alert-danger">{{session()->get('error')}}</p>
+@endif
+
  <div class="card mb-4">
          
 <div class="card" id="printableArea">

@@ -21,12 +21,12 @@ class BloodsellviewController extends Controller
             'status'=>'approved'
         ]);
        
-       return redirect()->back()->with('success','Approved.');
+       return redirect()->back()->with('message','Approved.');
     }
     public function delete($id)
     {
        sellblood::find($id)->delete();
-       return redirect()->back()->with('success','Declined.');
+       return redirect()->back()->with('error','Declined.');
     }
 
 }
