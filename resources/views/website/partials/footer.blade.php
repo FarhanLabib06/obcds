@@ -18,12 +18,12 @@
                         <a href="{{route('aboutus')}}">
                             <li>About Us</li>
                         </a>
-                        <a href="#articles">
+                        <!-- <a href="#articles">
                             <li>Posts</li>
-                        </a>
-                        <a href="requests.html">
+                        </a> -->
+                        <!-- <a href="requests.html">
                             <li>Donations</li>
-                        </a>
+                        </a> -->
                         <a href="{{route('whoweare')}}">
                             <li>Who We Are?</li>
                         </a>

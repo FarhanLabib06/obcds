@@ -24,7 +24,7 @@
   <tbody>
       @foreach($list as $key=>$g)
     <tr>
-      <td>{{($g->$key+1)}}</td>
+      <td>{{($key+1)}}</td>
       <td>{{($g->bloodcategory->blood_group)}}</td>
       <td>{{($g->collection_date)}}</td>
       <td>{{($g->expire_date)}}</td>

@@ -6,7 +6,7 @@
                 <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <i class="fas fa-phone-volume" style="border-right: 1px solid gray;"> 
+                            <i class="fas fa-phone-volume" style="border-right: 1px solid gray;">+8801774709890 
                                 &nbsp; &nbsp; </i>
                         </li>
                         <li class="nav-item">
@@ -15,12 +15,12 @@
                     </ul>
                 </div>
                 <div class="mx-auto order-0 navbar-brand mx-auto">
-                    <a href="https://www.instagram.com/ipda3.tech/"><i
+                    <a href="https://www.instagram.com/"><i
                             class="fab fa-instagram github">&nbsp;&nbsp;</i></a>
-                    <a href="https://www.facebook.com/ipda3tech/"><i
+                    <a href="https://www.facebook.com/"><i
                             class="fab fa-facebook-f facebook">&nbsp;&nbsp;</i></a>
-                    <a href="https://twitter.com/ipda3_tech"><i class="fab fa-twitter twitter">&nbsp;&nbsp;</i></a>
-                    <a href="https://api.whatsapp.com/send?phone=+201097571186"><i
+                    <a href="https://twitter.com/"><i class="fab fa-twitter twitter">&nbsp;&nbsp;</i></a>
+                    <a href="https://api.whatsapp.com/"><i
                             class="fab fa-whatsapp whats">&nbsp;&nbsp;</i></a>
                 </div>
                 <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">

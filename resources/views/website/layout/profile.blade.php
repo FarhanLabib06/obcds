@@ -186,7 +186,7 @@
 </div><!--/row-->
 <div>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#"> Profile</a></li>
+                <!-- <li class="active"><a data-toggle="tab" href="#"> Profile</a></li> -->
             </ul>
         </div>
 
@@ -201,6 +201,8 @@
       <th scope="col">Stock_id</th>
       
       <th scope="col">Amount</th>
+      <th scope="col">Request Date</th>
+
       
     </tr>
   </thead>
@@ -211,7 +213,7 @@
       <td>{{$key+1}}</td>
       <td>{{$bloodrequest->stock_id}}</td>
       <td>{{$bloodrequest->amount}}</td>
-      
+      <td>{{$bloodrequest->created_at}}</td>
     </tr>
     @endforeach
   </tbody>
